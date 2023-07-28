@@ -37,8 +37,8 @@
                 var maxY = 50
 
                 
-                x = d3.scaleLinear().domain([minX,maxX]).range([0,W]);
-                y = d3.scaleLinear().domain([minY,maxY]).range([H,0]);
+                x = d3.scaleLinear().domain([minX,maxX]).range([0,400]);
+                y = d3.scaleLinear().domain([minY,maxY]).range([400,0]);
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
