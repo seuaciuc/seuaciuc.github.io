@@ -11,7 +11,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>Descriptive paragraph about what we are showing...</p>
+        <p>Descriptive paragraph about what we are showing</p>
         
         <svg width=500 height=500>
         </svg>
@@ -48,7 +48,7 @@
                   .append('circle')
                     .attr('cx',function(d,i){return x(citympg[i]);})
                     .attr('cy',function(d,i){return y(hwympg[i]);})
-                    .attr('r',function(d,i){return 2+cyl[i];})
+                    .attr('r',function(d,i){if(cyl[i]<=4){return 4;}else if(cyl==6){return 8;}else{return 12;};})//{return 2+cyl[i];})
                 
                 d3.select('svg')
                   .append("g")
