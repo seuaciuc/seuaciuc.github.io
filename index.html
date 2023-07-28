@@ -11,7 +11,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>reformatting legends...</p>
+        <p>reformatting legends again...</p>
         
         <svg width=500 height=600>
         </svg>
@@ -70,6 +70,7 @@
                     .attr('x',0)
                     .attr('y',450)
                     .text('Continent')
+                    .attr("font-weight",700)
                 // red legend entry
                 d3.select('svg')
                   .append("g")
@@ -87,6 +88,7 @@
                     .attr('y',475)
                     .text('Asia')
                     .attr("alignment-baseline","middle")
+                    .style('fill','rgb(255,0,0)')
                 // green legend entry
                 d3.select('svg')
                   .append("g")
@@ -104,6 +106,7 @@
                     .attr('y',500)
                     .text('Europe')
                     .attr("alignment-baseline","middle")
+                    .style('fill','rgb(0,255,0)')
                 // blue legend entry
                 d3.select('svg')
                   .append("g")
@@ -121,6 +124,7 @@
                     .attr('y',525)
                     .text('North America')
                     .attr("alignment-baseline","middle")
+                    .style('fill','rgb(0,0,255)')
                 // Engine size legend title
                 d3.select('svg')
                   .append("g")
@@ -129,6 +133,7 @@
                     .attr('x',200)
                     .attr('y',450)
                     .text('Engine Size')
+                    .attr("font-weight",700)
                 // size 4 legend entry
                 d3.select('svg')
                   .append("g")
