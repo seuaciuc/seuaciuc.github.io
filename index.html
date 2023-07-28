@@ -11,7 +11,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>Adding legend title again...</p>
+        <p>reformatting legends...</p>
         
         <svg width=500 height=600>
         </svg>
@@ -68,7 +68,7 @@
                   .attr("transform","translate(50,50)")
                   .append('text')
                     .attr('x',0)
-                    .attr('y',425)
+                    .attr('y',450)
                     .text('Continent')
                 // red legend entry
                 d3.select('svg')
@@ -76,7 +76,7 @@
                   .attr("transform","translate(50,50)")
                   .append('circle')
                     .attr('cx',0)
-                    .attr('cy',450)
+                    .attr('cy',475)
                     .attr('r',8)
                     .style('fill','rgb(255,0,0)')
                 d3.select('svg')
@@ -84,15 +84,16 @@
                   .attr("transform","translate(50,50)")
                   .append('text')
                     .attr('x',20)
-                    .attr('y',450)
+                    .attr('y',475)
                     .text('Asia')
+                    .attr("alignment-baseline","middle")
                 // green legend entry
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('circle')
                     .attr('cx',0)
-                    .attr('cy',475)
+                    .attr('cy',500)
                     .attr('r',8)
                     .style('fill','rgb(0,255,0)')
                 d3.select('svg')
@@ -100,15 +101,16 @@
                   .attr("transform","translate(50,50)")
                   .append('text')
                     .attr('x',20)
-                    .attr('y',475)
+                    .attr('y',500)
                     .text('Europe')
+                    .attr("alignment-baseline","middle")
                 // blue legend entry
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('circle')
                     .attr('cx',0)
-                    .attr('cy',500)
+                    .attr('cy',525)
                     .attr('r',8)
                     .style('fill','rgb(0,0,255)')
                 d3.select('svg')
@@ -116,15 +118,16 @@
                   .attr("transform","translate(50,50)")
                   .append('text')
                     .attr('x',20)
-                    .attr('y',500)
+                    .attr('y',525)
                     .text('North America')
+                    .attr("alignment-baseline","middle")
                 // Engine size legend title
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('text')
                     .attr('x',200)
-                    .attr('y',425)
+                    .attr('y',450)
                     .text('Engine Size')
                 // size 4 legend entry
                 d3.select('svg')
@@ -132,7 +135,7 @@
                   .attr("transform","translate(50,50)")
                   .append('circle')
                     .attr('cx',200)
-                    .attr('cy',450)
+                    .attr('cy',475)
                     .attr('r',4)
                     .style('fill','rgb(100,100,100)')
                 d3.select('svg')
@@ -140,15 +143,16 @@
                   .attr("transform","translate(50,50)")  
                   .append('text')
                     .attr('x',220)
-                    .attr('y',450)
+                    .attr('y',475)
                     .text('4 or fewer cylinders')
+                    .attr("alignment-baseline","middle")
                 // size 8 legend entry
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('circle')
                     .attr('cx',200)
-                    .attr('cy',475)
+                    .attr('cy',500)
                     .attr('r',8)
                     .style('fill','rgb(100,100,100)')
                 d3.select('svg')
@@ -156,15 +160,16 @@
                   .attr("transform","translate(50,50)")
                   .append('text')
                     .attr('x',220)
-                    .attr('y',475)
+                    .attr('y',500)
                     .text('8 cylinders')
+                    .attr("alignment-baseline","middle")
                 // size 12 legend entry
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('circle')
                     .attr('cx',200)
-                    .attr('cy',500)
+                    .attr('cy',525)
                     .attr('r',12)
                     .style('fill','rgb(100,100,100)')
                 d3.select('svg')
@@ -172,8 +177,9 @@
                   .attr("transform","translate(50,50)")
                   .append('text')
                     .attr('x',220)
-                    .attr('y',500)
+                    .attr('y',525)
                     .text('10 or more cylinders')
+                    .attr("alignment-baseline","middle")
                 
                // }
             </script>
