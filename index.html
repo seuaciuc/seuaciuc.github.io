@@ -11,7 +11,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>Adding text to legend again...</p>
+        <p>Adding legend title...</p>
         
         <svg width=500 height=600>
         </svg>
@@ -61,10 +61,18 @@
                   .attr("transform","translate(50,450)")
                   .call(d3.axisBottom(x).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
                 
-                // adding legend
+                // adding legends
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
+                  // Continent legend title
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('text')
+                    .attr('x',0)
+                    .attr('y',425)
+                    .text('Continent')
                   // red legend entry
                   .append('circle')
                     .attr('cx',0)
@@ -95,6 +103,11 @@
                     .attr('x',20)
                     .attr('y',500)
                     .text('North America')
+                // Continent legend title
+                  .append('text')
+                    .attr('x',200)
+                    .attr('y',425)
+                    .text('Engine Size')
                 // size 4 legend entry
                   .append('circle')
                     .attr('cx',200)
