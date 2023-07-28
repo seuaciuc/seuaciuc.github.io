@@ -11,7 +11,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>Adding 6 circles...</p>
+        <p>Adding text to legend...</p>
         
         <svg width=500 height=600>
         </svg>
@@ -60,15 +60,21 @@
                   .append("g")
                   .attr("transform","translate(50,450)")
                   .call(d3.axisBottom(x).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
-                // red legend entry
+                
+                // adding legend
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
+                  // red legend entry
                   .append('circle')
                     .attr('cx',0)
                     .attr('cy',450)
                     .attr('r',8)
                     .style('fill','rgb(255,0,0)')
+                  .append('text')
+                    .attr('x',20)
+                    .attr('y',450)
+                    .text('Asia')
                 // green legend entry
                 d3.select('svg')
                   .append("g")
@@ -93,7 +99,7 @@
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('circle')
-                    .attr('cx',100)
+                    .attr('cx',200)
                     .attr('cy',450)
                     .attr('r',4)
                     .style('fill','rgb(100,100,100)')
@@ -102,7 +108,7 @@
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('circle')
-                    .attr('cx',100)
+                    .attr('cx',200)
                     .attr('cy',475)
                     .attr('r',8)
                     .style('fill','rgb(100,100,100)')
@@ -111,7 +117,7 @@
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('circle')
-                    .attr('cx',100)
+                    .attr('cx',200)
                     .attr('cy',500)
                     .attr('r',12)
                     .style('fill','rgb(100,100,100)')
