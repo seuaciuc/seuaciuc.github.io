@@ -11,7 +11,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>Descriptive paragraph about what we are showing...</p>
+        <p>Adding one circle...</p>
         
         <svg width=500 height=500>
         </svg>
@@ -60,7 +60,15 @@
                   .append("g")
                   .attr("transform","translate(50,450)")
                   .call(d3.axisBottom(x).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
-            
+
+                  d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('circle')
+                    .attr('cx',50)
+                    .attr('cy',450)
+                    .attr('r',4)
+                    .style('fill','rgb(50,50,50)')
                // }
             </script>
     </body>
