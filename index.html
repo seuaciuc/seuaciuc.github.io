@@ -11,7 +11,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>Descriptive paragraph about what we are showing...</p>
+        <p>Descriptive paragraph about what we are showing</p>
         
         <svg width=500 height=500>
         </svg>
@@ -31,14 +31,14 @@
                 var yo = 50
                 var H = 400
                 var W = 400
-                var minX = 0
+                var minX = 10
                 var maxX = 50
-                var minY = 0
+                var minY = 10
                 var maxY = 50
 
                 
-                x = d3.scaleLinear().domain([0,50]).range([0,400]);
-                y = d3.scaleLinear().domain([0,50]).range([400,0]);
+                x = d3.scaleLinear().domain([minX,maxX]).range([0,H]);
+                y = d3.scaleLinear().domain([minY,maxY]).range([W,0]);
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
