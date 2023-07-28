@@ -11,9 +11,9 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>Adding 3 circles...</p>
+        <p>Adding 6 circles...</p>
         
-        <svg width=500 height=500>
+        <svg width=500 height=600>
         </svg>
         <script>
           //  async function init() {
@@ -87,6 +87,34 @@
                     .attr('cy',500)
                     .attr('r',8)
                     .style('fill','rgb(0,0,255)')
+                
+                // size 4 legend entry
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('circle')
+                    .attr('cx',100)
+                    .attr('cy',450)
+                    .attr('r',4)
+                    .style('fill','rgb(100,100,100)')
+                // size 8 legend entry
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('circle')
+                    .attr('cx',100)
+                    .attr('cy',475)
+                    .attr('r',8)
+                    .style('fill','rgb(100,100,100)')
+                // size 12 legend entry
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('circle')
+                    .attr('cx',100)
+                    .attr('cy',500)
+                    .attr('r',12)
+                    .style('fill','rgb(100,100,100)')
                 
                // }
             </script>
