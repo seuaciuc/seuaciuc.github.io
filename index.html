@@ -52,13 +52,13 @@
                 
                 d3.select('svg')
                   .append("g")
-                  .attr("transform","translate(50,50)")
-                  .call(d3.axisLeft(y).tickValues([10,20,50,100]).tickFormat(d3.format("~s")))
+                  .attr("transform","translate(xo,yo)")
+                  .call(d3.axisLeft(y).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
                   
                 d3.select('svg')
                   .append("g")
-                  .attr("transform","translate(50,250)")
-                  .call(d3.axisBottom(x).tickValues([10,20,50,100]).tickFormat(d3.format("~s")))
+                  .attr("transform","translate(xo,yo)")
+                  .call(d3.axisBottom(x).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
             
                // }
             </script>
