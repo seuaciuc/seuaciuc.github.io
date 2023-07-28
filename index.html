@@ -48,7 +48,7 @@
                   .append('circle')
                     .attr('cx',function(d,i){return x(citympg[i]);})
                     .attr('cy',function(d,i){return y(hwympg[i]);})
-                    .attr('r',function(d,i){if(cyl[i]<=4){return 4;}else if(cyl==6){return 8;}else{return 12;};})//{return 2+cyl[i];})
+                    .attr('r',function(d,i){if(cyl[i]<=4){return 4;}else if(cyl[i]==6){return 8;}else{return 12;};})//{return 2+cyl[i];})
                 
                 d3.select('svg')
                   .append("g")
