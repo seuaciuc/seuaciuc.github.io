@@ -11,7 +11,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>Descriptive paragraph about what we are showing</p>
+        <p>Descriptive paragraph about what we are showing...</p>
         
         <svg width=500 height=500>
         </svg>
@@ -49,7 +49,7 @@
                     .attr('cx',function(d,i){return x(citympg[i]);})
                     .attr('cy',function(d,i){return y(hwympg[i]);})
                     .attr('r',function(d,i){if(cyl[i]<=4){return 4;}else if(cyl[i]==6){return 8;}else{return 12;};})//{return 2+cyl[i];})
-                    .style('fill',function(d,i){if(continent[i]=="Asia"){return rgb(255,0,0);}else if(continent[i]=="Europe"){return rgb(0,255,0);}else{return rgb(0,0,255);}})
+                    .style('fill',function(d,i){if(continent[i]=="Asia"){return "rgb(255,0,0)";}else if(continent[i]=="Europe"){return "rgb(0,255,0)";}else{return "rgb(0,0,255)";}})
                 
                 d3.select('svg')
                   .append("g")
