@@ -11,7 +11,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>Adding one circle...</p>
+        <p>Adding 3 circles...</p>
         
         <svg width=500 height=500>
         </svg>
@@ -60,15 +60,34 @@
                   .append("g")
                   .attr("transform","translate(50,450)")
                   .call(d3.axisBottom(x).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
-
-                  d3.select('svg')
+                // red legend entry
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('circle')
-                    .attr('cx',50)
+                    .attr('cx',0)
                     .attr('cy',450)
-                    .attr('r',4)
-                    .style('fill','rgb(50,50,50)')
+                    .attr('r',8)
+                    .style('fill','rgb(255,0,0)')
+                // green legend entry
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('circle')
+                    .attr('cx',0)
+                    .attr('cy',475)
+                    .attr('r',8)
+                    .style('fill','rgb(0,255,0)')
+                // blue legend entry
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('circle')
+                    .attr('cx',0)
+                    .attr('cy',500)
+                    .attr('r',8)
+                    .style('fill','rgb(0,0,255)')
+                
                // }
             </script>
     </body>
