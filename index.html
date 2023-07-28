@@ -41,7 +41,7 @@
                 y = d3.scaleLinear().domain([minY,maxY]).range([H,0]);
                 d3.select('svg')
                   .append("g")
-                  .attr("transform","translate(xo,yo)")
+                  .attr("transform","translate(50,50)")
                   .selectAll('circle')
                   .data(citympg)
                   .enter()
@@ -52,12 +52,12 @@
                 
                 d3.select('svg')
                   .append("g")
-                  .attr("transform","translate(xo,yo)")
+                  .attr("transform","translate(50,50)")
                   .call(d3.axisLeft(y).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
                   
                 d3.select('svg')
                   .append("g")
-                  .attr("transform","translate(xo,yo)")
+                  .attr("transform","translate(50,50)")
                   .call(d3.axisBottom(x).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
             
                // }
