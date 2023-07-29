@@ -35,7 +35,7 @@
 
         <h1>The 2017 Car Market from a Fuel Economy Perspective</h1>
 
-        <p>trying selection on legend with filter, adding text</p>
+        <p>0.15 opacity</p>
         
         <div id="tooltip"></div>
         <div id="note"></div>
@@ -185,7 +185,7 @@
                     .attr('cy',500)
                     .attr('r',8)
                     .style('fill','rgb(255,0,0)')
-                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!="Asia"}).style('opacity',0.3)})
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!="Asia"}).style('opacity',0.15)})
                     .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
                 d3.select('svg')
                   .append("g")
@@ -196,7 +196,7 @@
                     .text('Asia')
                     .attr("alignment-baseline","middle")
                     .style('fill','rgb(255,0,0)')
-                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!="Asia"}).style('opacity',0.3)})
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!="Asia"}).style('opacity',0.15)})
                     .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
                 // green legend entry
                 d3.select('svg')
