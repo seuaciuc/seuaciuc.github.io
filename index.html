@@ -24,7 +24,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>trying tooltip formatting</p>
+        <p>trying tooltip formatting...</p>
         
         <div id="tooltip"></div>
         <svg width=500 height=650>
@@ -68,7 +68,7 @@
                     .style('fill',function(d,i){if(continent[i]=="Asia"){return "rgb(255,0,0)";}else if(continent[i]=="Europe"){return "rgb(0,255,0)";}else{return "rgb(0,0,255)";}})
                     //.style('stroke','black')
                     .on("mouseover",function(d,i){tooltip.style("opacity",1)
-                                                         .html("Make: "+make[i]+"\nFuel: "+fuel[i]+"\nCylinders: "+cyl[i]);
+                                                         .html("Make: "+make[i]+"<br>Fuel: "+fuel[i]+"<br>Cylinders: "+cyl[i]);
                                                   d3.select(this).style('stroke','black');
                                                  })
                     .on("mouseout",function(){tooltip.style("opacity",0);d3.select(this).style('stroke','none');})
