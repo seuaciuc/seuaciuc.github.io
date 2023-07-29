@@ -35,7 +35,7 @@
 
         <h1>The 2017 Car Market from a Fuel Economy Perspective</h1>
 
-        <p>0.15 opacity</p>
+        <p>0.15 opacity on all</p>
         
         <div id="tooltip"></div>
         <div id="note"></div>
@@ -207,6 +207,8 @@
                     .attr('cy',525)
                     .attr('r',8)
                     .style('fill','rgb(0,255,0)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!="Europe"}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
@@ -216,6 +218,8 @@
                     .text('Europe')
                     .attr("alignment-baseline","middle")
                     .style('fill','rgb(0,255,0)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!="Europe"}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
                 // blue legend entry
                 d3.select('svg')
                   .append("g")
@@ -225,6 +229,8 @@
                     .attr('cy',550)
                     .attr('r',8)
                     .style('fill','rgb(0,0,255)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!="North America"}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
@@ -234,6 +240,8 @@
                     .text('North America')
                     .attr("alignment-baseline","middle")
                     .style('fill','rgb(0,0,255)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!="North America"}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
                 // Engine size legend title
                 d3.select('svg')
                   .append("g")
@@ -253,6 +261,8 @@
                     .attr('cy',500)
                     .attr('r',4)
                     .style('fill','rgb(100,100,100)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return cyl[i]>4}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")  
@@ -261,6 +271,8 @@
                     .attr('y',500)
                     .text('4 or fewer cylinders')
                     .attr("alignment-baseline","middle")
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return cyl[i]>4}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
                 // size 8 legend entry
                 d3.select('svg')
                   .append("g")
@@ -270,6 +282,8 @@
                     .attr('cy',525)
                     .attr('r',8)
                     .style('fill','rgb(100,100,100)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return cyl[i]!=8}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
@@ -278,6 +292,8 @@
                     .attr('y',525)
                     .text('8 cylinders')
                     .attr("alignment-baseline","middle")
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return cyl[i]!=8}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
                 // size 12 legend entry
                 d3.select('svg')
                   .append("g")
@@ -287,6 +303,8 @@
                     .attr('cy',550)
                     .attr('r',12)
                     .style('fill','rgb(100,100,100)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return cyl[i]<10}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
@@ -295,6 +313,8 @@
                     .attr('y',550)
                     .text('10 or more cylinders')
                     .attr("alignment-baseline","middle")
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return cyl[i]<10}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
                 
                 
                 
