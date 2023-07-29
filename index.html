@@ -17,6 +17,16 @@
         left: 280px;
         top: 460px;
       }
+      #note {
+        opacity:1;
+        position:absolute;
+        text-align:left;
+        width: 200px; height: 80px;
+        background: white;
+        border: 0px;
+        left: 280px;
+        top: 460px;
+      }
     </style>
     
  <!--   <body onload='init()'> -->
@@ -24,9 +34,10 @@
 
         <h1>The 2017 Car Market from a Fuel Economy Perspective</h1>
 
-        <p>next line</p>
+        <p>nwith new div</p>
         
         <div id="tooltip"></div>
+        <div id="note"></div>
         <svg width=500 height=650>
         </svg>
         <script>
@@ -51,7 +62,8 @@
                 var ymax = 50
 
                 var tooltip = d3.select('#tooltip');
-                //document.getElementById("citympg").innerHTML = citympg;
+                var note = d3.select('#note')
+                             .html("Hover any point to see<br>more information here.")
 
                 x = d3.scaleLinear().domain([xmin,xmax]).range([0,H]);
                 y = d3.scaleLinear().domain([ymin,ymax]).range([W,0]);
@@ -116,7 +128,7 @@
                     .attr('height',H)
                     .style('stroke','rgb(0,0,0)')
                     .style('fill','none')
-*/ 
+ 
                 
                 // explanatory note on graph
                 d3.select('svg')
@@ -128,7 +140,7 @@
                     .attr("y", 310)
                     .text("Hover any point to see\nmore information here.")
                     .style('fill','rgb(150,150,150)');
-
+*/
                 // axis titles
                 // Add X axis label:
                 d3.select('svg')
