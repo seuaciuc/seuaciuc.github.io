@@ -30,7 +30,8 @@
       }
       .button{
         color: black;
-        background-color:lightgrey;
+        background-color:#f0f0f0;
+        border: none;
       }
     </style>
         
@@ -38,13 +39,13 @@
         <header>
           <h1>Exploring the 2017 Car Market</h1>
 
-          <p>styling buttons</p>
+          <p>styling buttons...</p>
           <p id="intro">Full Market Data paragraph</p>
 
           <button class="button" id="FMbutton" type="button" onclick="showFullMarketData()">Explore the Full Market</button>
-          <button id="FEbutton" type="button" onclick="showFuelEfficiencyMarketData()">Explore the Fuel Efficiency Market</button>
-          <button id="HPbutton" type="button" onclick="showHighPowerMarketData()">Explore the High Power Market</button>
-          <button id="Cbutton" type="button" onclick="showCompromiseData()">Explore a Compromise</button>
+          <button class="button" id="FEbutton" type="button" onclick="showFuelEfficiencyMarketData()">Explore the Fuel Efficiency Market</button>
+          <button class="button" id="HPbutton" type="button" onclick="showHighPowerMarketData()">Explore the High Power Market</button>
+          <button class="button" id="Cbutton" type="button" onclick="showCompromiseData()">Explore a Compromise</button>
 
         </header>
         <div id="tooltip"></div>
