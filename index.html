@@ -34,7 +34,7 @@
         <header>
           <h1>The 2017 Car Market from a Fuel Economy Perspective</h1>
 
-          <p>new note</p>
+          <p>updated bounds</p>
 
           <button type = "button" onclick="showFullMarketData()">Explore the Full Market</button>
           <button type = "button" onclick="showFuelEfficiencyMarketData()">Explore the Fuel Efficiency Market</button>
@@ -66,14 +66,14 @@
             //d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
             d3.select('svg').selectAll("*").remove()
             loadHighPowerData()
-            plotData(5,30,10,30)
+            plotData(5,25,15,30)
           }
 
           function showCompromiseData(){
             //d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
             d3.select('svg').selectAll("*").remove()
             loadCompromiseData()
-            plotData(15,35,15,35)
+            plotData(15,30,20,35)
           }
 
             function loadFullData(){
