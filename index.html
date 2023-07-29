@@ -28,19 +28,23 @@
         left: 280px;
         top: 510px;
       }
+      .button {
+        width: 250px;
+        height: 20px; 
+      }
     </style>
         
  <body>
         <header>
           <h1>Exploring the 2017 Car Market</h1>
 
-          <p>button text updates</p>
+          <p>added class</p>
           <p id="intro">Full Market Data paragraph</p>
 
-          <button id="FMbutton" type="button" onclick="showFullMarketData()">You are exploring the full market</button>
-          <button id="FEbutton" type="button" onclick="showFuelEfficiencyMarketData()">Explore the fuel efficiency market</button><br>
-          <button id="HPbutton" type="button" onclick="showHighPowerMarketData()">Explore the high power market</button>
-          <button id="Cbutton" type="button" onclick="showCompromiseData()">Explore a compromise</button>
+          <button class="button" id="FMbutton" type="button" onclick="showFullMarketData()">You are exploring the full market</button>
+          <button class="button" id="FEbutton" type="button" onclick="showFuelEfficiencyMarketData()">Explore the fuel efficiency market</button><br>
+          <button class="button" id="HPbutton" type="button" onclick="showHighPowerMarketData()">Explore the high power market</button>
+          <button class="button" id="Cbutton" type="button" onclick="showCompromiseData()">Explore a compromise</button>
 
         </header>
         <div id="tooltip"></div>
