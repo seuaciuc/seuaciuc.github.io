@@ -35,7 +35,7 @@
 
         <h1>The 2017 Car Market from a Fuel Economy Perspective</h1>
 
-        <p>trying raise</p>
+        <p>trying raise+lower</p>
         
         <div id="tooltip"></div>
         <div id="note"></div>
@@ -85,7 +85,7 @@
                                                   d3.select(this).style('stroke','black').raise();
                                                   note.style("opacity",0)
                                                  })
-                    .on("mouseout",function(){tooltip.style("opacity",0);d3.select(this).style('stroke','none');note.style("opacity",1);})
+                    .on("mouseout",function(){tooltip.style("opacity",0);d3.select(this).style('stroke','none').lower();note.style("opacity",1);})
                 
                 d3.select('svg')
                   .append("g")
