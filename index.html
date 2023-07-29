@@ -11,7 +11,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>added titles x=-88 y=-30</p>
+        <p>trying a rectangle...</p>
         
         <svg width=500 height=650>
         </svg>
@@ -83,6 +83,18 @@
                     .attr('y1',0)
                     .style('stroke','rgb(0,0,0)')
 */                                                        
+                
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('rect')
+                    .attr('x',0)
+                    .attr('y',0)
+                    .attr('width',W)
+                    .attr('height',H)
+                    .style('stroke','rgb(0,0,0)')
+
+
                 // axis titles
                 // Add X axis label:
                 d3.select('svg')
