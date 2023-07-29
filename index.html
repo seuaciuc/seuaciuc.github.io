@@ -6,14 +6,25 @@
     </head>
     <script src='https://d3js.org/d3.v5.min.js'></script>
     <style> circle {fill: lightblue; stroke: black;} </style>
-    <div name="tooltip" opacity=0></div>
+    <style>
+      #tooltip {
+        opacity:0;
+        position:absolute;
+        text-align: center;
+        width: 60px; height: 40px;
+        background: white;
+        border: 0px;
+      }
+    </style>
+    
  <!--   <body onload='init()'> -->
     <body>
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>trying tooltip...</p>
+        <p>trying tooltip again...</p>
         
+        <div id="tooltip"></div>
         <svg width=500 height=650>
         </svg>
         <script>
