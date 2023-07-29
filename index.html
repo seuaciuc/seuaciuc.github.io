@@ -81,6 +81,28 @@
                     .attr('x1',W)
                     .attr('y1',0)
                     .style('stroke','rgb(0,0,0)')
+                
+                // axis titles
+                // Add X axis label:
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append("text")
+                    .attr("text-anchor", "end")
+                    .attr("x", 200)
+                    .attr("y", 420)
+                    .text("X axis title");
+
+                // Y axis label:
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append("text")
+                    .attr("text-anchor", "end")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", 200)
+                    .attr("x", 30)
+                    .text("Y axis title")
 
                 // adding legends
                 // Continent legend title
