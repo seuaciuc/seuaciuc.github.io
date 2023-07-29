@@ -6,24 +6,17 @@
     </head>
     <script src='https://d3js.org/d3.v5.min.js'></script>
     <style> circle {fill: lightblue; stroke: black;} </style>
-    <div id="dataviz"></div>
-
+    <div name="tooltip" opacity="0"></div>
  <!--   <body onload='init()'> -->
     <body>
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>trying a rectangle...</p>
+        <p>trying tooltip...</p>
         
-  <!--      <svg width=500 height=650>
+        <svg width=500 height=650>
         </svg>
-      -->
         <script>
-            var svg = d3.select("#dataviz")
-              .append("svg")
-              .attr("width", 500)
-              .attr("height", 650)
-              
           //  async function init() {
                 // data
                 var citympg = [25,21,24,17,12,23,19,17,14,24,13,12,30,23,36,28,23,19,15,13,20,23,18,22,17,14,22,18,15,21,21,15,27,17,15,16,23,20,15,14,12,19,18,16,12,26,22,19,11,14,29,24,17,15,17,15,17,21,20,17,15,30,29,19,27,18,22,20,15,25,30,21,18,15,19,14,24,13,21,17,15,27,18,14,10,22,20,17,14,22,21,16,39,20,23,16,17,16,14,26,27,16,23,19,16,13,24,20,35,24,26,18,26,18,14,21,19,14,14,21,17,12,14,32,21,25,20,23,32,20,13,21,24,18,22,23];
@@ -47,7 +40,7 @@
                 
                 x = d3.scaleLinear().domain([xmin,xmax]).range([0,H]);
                 y = d3.scaleLinear().domain([ymin,ymax]).range([W,0]);
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .selectAll('circle')
@@ -58,20 +51,25 @@
                     .attr('cy',function(d,i){return y(hwympg[i]);})
                     .attr('r',function(d,i){if(cyl[i]<=4){return 4;}else if(cyl[i]==6){return 8;}else{return 12;};})//{return 2+cyl[i];})
                     .style('fill',function(d,i){if(continent[i]=="Asia"){return "rgb(255,0,0)";}else if(continent[i]=="Europe"){return "rgb(0,255,0)";}else{return "rgb(0,0,255)";}})
+                    .on("mouseover",function(d,i){tooltip.style("opacity",1)
+                                                         .style("left",(d3.event.pageX)+"px")
+                                                         .style("top",(d3.event.pageY)+"px")
+                                                         .html("CityMPG is"+citympg[i]);
+                                                 })
                 
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .call(d3.axisLeft(y).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
                   
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,450)")
                   .call(d3.axisBottom(x).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
 /*
                 // box around chart
 
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('line')
@@ -81,7 +79,7 @@
                     .attr('y1',H)
                     .style('stroke','rgb(0,0,0)')
 
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('line')
@@ -92,7 +90,7 @@
                     .style('stroke','rgb(0,0,0)')
                                                        
                 
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('rect')
@@ -106,7 +104,7 @@
 
                 // axis titles
                 // Add X axis label:
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append("text")
@@ -116,7 +114,7 @@
                     .text("Average City Miles per Gallon");
 
                 // Y axis label:
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append("text")
@@ -128,7 +126,7 @@
 
                 // adding legends
                 // Continent legend title
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('text')
@@ -138,7 +136,7 @@
                     .attr("font-weight",700)
                     .style("font-size", "20px")
                 // red legend entry
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('circle')
@@ -146,7 +144,7 @@
                     .attr('cy',500)
                     .attr('r',8)
                     .style('fill','rgb(255,0,0)')
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('text')
@@ -156,7 +154,7 @@
                     .attr("alignment-baseline","middle")
                     .style('fill','rgb(255,0,0)')
                 // green legend entry
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('circle')
@@ -164,7 +162,7 @@
                     .attr('cy',525)
                     .attr('r',8)
                     .style('fill','rgb(0,255,0)')
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('text')
@@ -174,7 +172,7 @@
                     .attr("alignment-baseline","middle")
                     .style('fill','rgb(0,255,0)')
                 // blue legend entry
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('circle')
@@ -182,7 +180,7 @@
                     .attr('cy',550)
                     .attr('r',8)
                     .style('fill','rgb(0,0,255)')
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('text')
@@ -192,7 +190,7 @@
                     .attr("alignment-baseline","middle")
                     .style('fill','rgb(0,0,255)')
                 // Engine size legend title
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('text')
@@ -202,7 +200,7 @@
                     .attr("font-weight",700)
                     .style("font-size", "20px")
                 // size 4 legend entry
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('circle')
@@ -210,7 +208,7 @@
                     .attr('cy',500)
                     .attr('r',4)
                     .style('fill','rgb(100,100,100)')
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")  
                   .append('text')
@@ -219,7 +217,7 @@
                     .text('4 or fewer cylinders')
                     .attr("alignment-baseline","middle")
                 // size 8 legend entry
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('circle')
@@ -227,7 +225,7 @@
                     .attr('cy',525)
                     .attr('r',8)
                     .style('fill','rgb(100,100,100)')
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('text')
@@ -236,7 +234,7 @@
                     .text('8 cylinders')
                     .attr("alignment-baseline","middle")
                 // size 12 legend entry
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('circle')
@@ -244,7 +242,7 @@
                     .attr('cy',550)
                     .attr('r',12)
                     .style('fill','rgb(100,100,100)')
-                svg
+                d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .append('text')
