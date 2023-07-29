@@ -34,7 +34,7 @@
         <header>
           <h1>The 2017 Car Market from a Fuel Economy Perspective</h1>
 
-          <p>added fuel option</p>
+          <p>changing domain</p>
 
           <button type = "button" onclick="showFullMarketData()">Explore the Full Market</button>
           <button type = "button" onclick="showFuelEfficiencyMarketData()">Explore the Fuel Efficiency Market</button>
@@ -52,28 +52,28 @@
             //d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
             d3.select('svg').selectAll("*").remove()
             loadFullData()
-            plotData()
+            plotData(5,50,10,50)
           }
 
           function showFuelEfficiencyMarketData(){
             //d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
             d3.select('svg').selectAll("*").remove()
             loadFuelEfficiencyData()
-            plotData()
+            plotData(15,40,20,45)
           }
           
           function showHighPowerMarketData(){
             //d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
             d3.select('svg').selectAll("*").remove()
             loadHighPowerData()
-            plotData()
+            plotData(5,30,10,30)
           }
 
           function showCompromiseData(){
             //d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
             d3.select('svg').selectAll("*").remove()
             loadCompromiseData()
-            plotData()
+            plotData(15,35,15,35)
           }
 
             function loadFullData(){
@@ -116,7 +116,21 @@
                 fuel = ["Gasoline","Diesel","Gasoline","Diesel","Gasoline","Gasoline","Gasoline"];
             }
 
-            function plotData(){
+            function plotData(xmin,xmax,ymin,ymax){
+              //plot setup
+              var xo = 50
+              var yo = 50
+              var H = 400
+              var W = 400
+              //var xmin = 5
+              //var xmax = 50
+              //var ymin = 10
+              //var ymax = 50
+
+              x = d3.scaleLinear().domain([xmin,xmax]).range([0,H]);
+              y = d3.scaleLinear().domain([ymin,ymax]).range([W,0]);
+
+
               d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
@@ -330,21 +344,9 @@
             var country = [];
             var fuel = [];
 
-                //plot setup
-                var xo = 50
-                var yo = 50
-                var H = 400
-                var W = 400
-                var xmin = 5
-                var xmax = 50
-                var ymin = 10
-                var ymax = 50
+            var tooltip = d3.select('#tooltip');
+            var note = d3.select('#note').html("Hover any point to see<br>more information about it.")
 
-                var tooltip = d3.select('#tooltip');
-                var note = d3.select('#note').html("Hover any point to see<br>more information about it.")
-
-                x = d3.scaleLinear().domain([xmin,xmax]).range([0,H]);
-                y = d3.scaleLinear().domain([ymin,ymax]).range([W,0]);
 
                 loadFullData();
                 plotData();
