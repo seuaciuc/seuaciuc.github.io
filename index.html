@@ -11,7 +11,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>titles resized...</p>
+        <p>added chart box...</p>
         
         <svg width=500 height=600>
         </svg>
@@ -31,14 +31,14 @@
                 var yo = 50
                 var H = 400
                 var W = 400
-                var minX = 5
-                var maxX = 50
-                var minY = 5
-                var maxY = 50
+                var xmin = 5
+                var xmax = 50
+                var ymin = 5
+                var ymax = 50
 
                 
-                x = d3.scaleLinear().domain([minX,maxX]).range([0,H]);
-                y = d3.scaleLinear().domain([minY,maxY]).range([W,0]);
+                x = d3.scaleLinear().domain([xmin,xmax]).range([0,H]);
+                y = d3.scaleLinear().domain([ymin,ymax]).range([W,0]);
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
@@ -60,7 +60,27 @@
                   .append("g")
                   .attr("transform","translate(50,450)")
                   .call(d3.axisBottom(x).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
+
+                // box around chart
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,450)")
+                  .append('line')
+                    .attr('x1',xmin)
+                    .attr('x2',xmax)
+                    .attr('y1',ymax)
+                    .attr('y1',ymax)
                 
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,450)")
+                  .append('line')
+                    .attr('x1',xmax)
+                    .attr('x2',xmax)
+                    .attr('y1',ymin)
+                    .attr('y1',ymax)
+
+
                 // adding legends
                 // Continent legend title
                 d3.select('svg')
