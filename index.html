@@ -5,7 +5,7 @@
         <title>CS416 Summer 2023: Narrative Visualization</title>
     </head>
     <script src='https://d3js.org/d3.v5.min.js'></script>
-    <style> circle {fill: lightblue; stroke: black;} </style>
+    <!--<style> circle {fill: lightblue; stroke: black;} </style>-->
     <style>
       #tooltip {
         opacity:0;
@@ -67,6 +67,7 @@
                                                          .style("top",(d3.event.pageY)+"px")
                                                          .html("CityMPG is"+citympg[i]);
                                                  })
+                    .on("mouseout",function(){tooltip.style("opacity",0)})
                 
                 d3.select('svg')
                   .append("g")
