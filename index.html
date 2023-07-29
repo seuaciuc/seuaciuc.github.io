@@ -35,7 +35,7 @@
 
         <h1>The 2017 Car Market from a Fuel Economy Perspective</h1>
 
-        <p>trying raise+lower</p>
+        <p>trying selection on legend</p>
         
         <div id="tooltip"></div>
         <div id="note"></div>
@@ -82,10 +82,10 @@
                     //.style('stroke','black')
                     .on("mouseover",function(d,i){tooltip.style("opacity",1)
                                                          .html("<b>Make:</b> "+make[i]+"<br><b>Fuel:</b> "+fuel[i]+"<br><b>Cylinders:</b> "+cyl[i]+"<br><b>City MPG:</b> "+citympg[i]+"<br><b>Highway MPG:</b> "+hwympg[i]);
-                                                  d3.select(this).style('stroke','black').raise();
+                                                  d3.select(this).style('stroke','black');
                                                   note.style("opacity",0)
                                                  })
-                    .on("mouseout",function(){tooltip.style("opacity",0);d3.select(this).style('stroke','none').lower();note.style("opacity",1);})
+                    .on("mouseout",function(){tooltip.style("opacity",0);d3.select(this).style('stroke','none');note.style("opacity",1);})
                 
                 d3.select('svg')
                   .append("g")
@@ -185,6 +185,7 @@
                     .attr('cy',500)
                     .attr('r',8)
                     .style('fill','rgb(255,0,0)')
+                    .on("mouseover",function(){d3.selectAll("circle[fill='rgb(255,0,0)']").style('opacity',0.5)})
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
