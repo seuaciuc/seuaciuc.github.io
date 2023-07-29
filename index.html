@@ -12,10 +12,10 @@
         position:absolute;
         text-align:left;
         width: 160px; height: 80px;
-        background: white;
+        background: none;
         border: 0px;
-        left: 200px;
-        top: 200px;
+        left: 250px;
+        top: 350px;
       }
     </style>
     
@@ -68,7 +68,7 @@
                     .style('fill',function(d,i){if(continent[i]=="Asia"){return "rgb(255,0,0)";}else if(continent[i]=="Europe"){return "rgb(0,255,0)";}else{return "rgb(0,0,255)";}})
                     //.style('stroke','black')
                     .on("mouseover",function(d,i){tooltip.style("opacity",1)
-                                                         .html("CityMPG is"+citympg[i]);
+                                                         .html("Make: "+make[i]+"\nFuel: "+fuel[i]+"\nCylinders: "+cyl[i]);
                                                   d3.select(this).style('stroke','black');
                                                  })
                     .on("mouseout",function(){tooltip.style("opacity",0);d3.select(this).style('stroke','none');})
