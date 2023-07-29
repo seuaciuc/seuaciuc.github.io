@@ -34,7 +34,7 @@
         <header>
           <h1>Exploring the 2017 Car Market</h1>
 
-          <p>divs down 50px</p>
+          <p>new tick marks</p>
           <p id="intro">Full Market Data paragraph</p>
 
           <button type = "button" onclick="showFullMarketData()">Explore the Full Market</button>
@@ -53,7 +53,7 @@
             //d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
             d3.select('svg').selectAll("*").remove()
             loadFullData()
-            plotData(5,50,10,50)
+            plotData(5,50,10,50,[10,20,30,40,50],[10,20,30,40,50])
             document.getElementById("intro").innerHTML = "Full Market Data paragraph";
           }
 
@@ -61,7 +61,7 @@
             //d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
             d3.select('svg').selectAll("*").remove()
             loadFuelEfficiencyData()
-            plotData(20,40,25,45)
+            plotData(20,40,25,45,[20,25,30,35,40],[25,30,35,40,45])
             document.getElementById("intro").innerHTML = "Fuel Efficiency Data paragraph";
           }
           
@@ -69,7 +69,7 @@
             //d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
             d3.select('svg').selectAll("*").remove()
             loadHighPowerData()
-            plotData(5,25,15,30)
+            plotData(5,25,15,30,[5,10,15,20,25],[15,20,25,30])
             document.getElementById("intro").innerHTML = "High Power Market Data paragraph";
           }
 
@@ -77,7 +77,7 @@
             //d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
             d3.select('svg').selectAll("*").remove()
             loadCompromiseData()
-            plotData(15,30,20,35)
+            plotData(15,30,20,35,[15,20,25,30],[20,25,30,35])
             document.getElementById("intro").innerHTML = "Compromise Data paragraph";
           }
 
@@ -124,7 +124,7 @@
                 fuel = ["Gasoline","Diesel","Gasoline","Diesel","Gasoline","Gasoline","Gasoline"];
             }
 
-            function plotData(xmin,xmax,ymin,ymax){
+            function plotData(xmin,xmax,ymin,ymax,xtick,ytick){
               //plot setup
               var xo = 50
               var yo = 50
@@ -161,12 +161,12 @@
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
-                  .call(d3.axisLeft(y).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
+                  .call(d3.axisLeft(y).tickValues(xtick).tickFormat(d3.format("~s")))
                   
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,450)")
-                  .call(d3.axisBottom(x).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
+                  .call(d3.axisBottom(x).tickValues(ytick).tickFormat(d3.format("~s")))
 
                 // axis titles
                 // Add X axis label:
@@ -357,7 +357,7 @@
 
 
                 loadFullData();
-                plotData(5,50,10,50);
+                plotData(5,50,10,50,[10,20,30,40,50],[10,20,30,40,50]);
 
 
             </script>
