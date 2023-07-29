@@ -34,7 +34,7 @@
         <header>
           <h1>The 2017 Car Market from a Fuel Economy Perspective</h1>
 
-          <p>added data</p>
+          <p>full plotting in function</p>
 
           <button type = "button" onclick="showFullMarketData()">Explore the Full Market</button>
           <button type = "button" onclick="showHighPowerMarketData()">Explore the High Power Market</button>
@@ -47,13 +47,15 @@
         <script>
 
           function showFullMarketData(){
-            d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
+            //d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
+            d3.select('svg').html=""
             loadFullData()
             plotData()
           }
           
           function showHighPowerMarketData(){
-            d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
+            //d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
+            d3.select('svg').html=""
             loadHighPowerData()
             plotData()
           }
@@ -97,55 +99,8 @@
                                                   note.style("opacity",0)
                                                  })
                     .on("mouseout",function(){tooltip.style("opacity",0);d3.select(this).style('stroke','none');note.style("opacity",1);})
-            }
-
-            var citympg = [];
-            var hwympg = [];
-            var cyl = [];
-            var continent = [];
-            var make = [];
-            var country = [];
-            var fuel = [];
-
-                //plot setup
-                var xo = 50
-                var yo = 50
-                var H = 400
-                var W = 400
-                var xmin = 5
-                var xmax = 50
-                var ymin = 10
-                var ymax = 50
-
-                var tooltip = d3.select('#tooltip');
-                var note = d3.select('#note').html("Hover any point to see<br>more information about it.")
-
-                x = d3.scaleLinear().domain([xmin,xmax]).range([0,H]);
-                y = d3.scaleLinear().domain([ymin,ymax]).range([W,0]);
-
-                loadFullData();
-                plotData();
-
-/*                d3.select('svg')
-                  .append("g")
-                  .attr("transform","translate(50,50)")
-                  .selectAll('circle')
-                  .data(citympg)
-                  .enter()
-                  .append('circle')
-                    .attr('cx',function(d,i){return x(citympg[i]);})
-                    .attr('cy',function(d,i){return y(hwympg[i]);})
-                    .attr('r',function(d,i){if(cyl[i]<=4){return 4;}else if(cyl[i]==6){return 8;}else{return 12;};})//{return 2+cyl[i];})
-                    .style('fill',function(d,i){if(continent[i]=="Asia"){return "rgb(255,0,0)";}else if(continent[i]=="Europe"){return "rgb(0,255,0)";}else{return "rgb(0,0,255)";}})
-                    //.style('stroke','black')
-                    .on("mouseover",function(d,i){tooltip.style("opacity",1)
-                                                         .html("<b>Make:</b> "+make[i]+"<br><b>Fuel:</b> "+fuel[i]+"<br><b>Cylinders:</b> "+cyl[i]+"<br><b>City MPG:</b> "+citympg[i]+"<br><b>Highway MPG:</b> "+hwympg[i]);
-                                                  d3.select(this).style('stroke','black');
-                                                  note.style("opacity",0)
-                                                 })
-                    .on("mouseout",function(){tooltip.style("opacity",0);d3.select(this).style('stroke','none');note.style("opacity",1);})
-*/                
-                d3.select('svg')
+                        
+                    d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
                   .call(d3.axisLeft(y).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
@@ -328,6 +283,238 @@
                     .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return cyl[i]<8 && cyl[i]!=null}).style('opacity',0.15)})
                     .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
                 
+
+            }
+
+            var citympg = [];
+            var hwympg = [];
+            var cyl = [];
+            var continent = [];
+            var make = [];
+            var country = [];
+            var fuel = [];
+
+                //plot setup
+                var xo = 50
+                var yo = 50
+                var H = 400
+                var W = 400
+                var xmin = 5
+                var xmax = 50
+                var ymin = 10
+                var ymax = 50
+
+                var tooltip = d3.select('#tooltip');
+                var note = d3.select('#note').html("Hover any point to see<br>more information about it.")
+
+                x = d3.scaleLinear().domain([xmin,xmax]).range([0,H]);
+                y = d3.scaleLinear().domain([ymin,ymax]).range([W,0]);
+
+                loadFullData();
+                plotData();
+
+/*                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .selectAll('circle')
+                  .data(citympg)
+                  .enter()
+                  .append('circle')
+                    .attr('cx',function(d,i){return x(citympg[i]);})
+                    .attr('cy',function(d,i){return y(hwympg[i]);})
+                    .attr('r',function(d,i){if(cyl[i]<=4){return 4;}else if(cyl[i]==6){return 8;}else{return 12;};})//{return 2+cyl[i];})
+                    .style('fill',function(d,i){if(continent[i]=="Asia"){return "rgb(255,0,0)";}else if(continent[i]=="Europe"){return "rgb(0,255,0)";}else{return "rgb(0,0,255)";}})
+                    //.style('stroke','black')
+                    .on("mouseover",function(d,i){tooltip.style("opacity",1)
+                                                         .html("<b>Make:</b> "+make[i]+"<br><b>Fuel:</b> "+fuel[i]+"<br><b>Cylinders:</b> "+cyl[i]+"<br><b>City MPG:</b> "+citympg[i]+"<br><b>Highway MPG:</b> "+hwympg[i]);
+                                                  d3.select(this).style('stroke','black');
+                                                  note.style("opacity",0)
+                                                 })
+                    .on("mouseout",function(){tooltip.style("opacity",0);d3.select(this).style('stroke','none');note.style("opacity",1);})
+                
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .call(d3.axisLeft(y).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
+                  
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,450)")
+                  .call(d3.axisBottom(x).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
+
+                // axis titles
+                // Add X axis label:
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append("text")
+                    .attr("text-anchor", "middle")
+                    .attr("x", 200)
+                    .attr("y", 440)
+                    .text("Average City Miles per Gallon");
+
+                // Y axis label:
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append("text")
+                    .attr("text-anchor", "end")
+                    .attr("transform", "rotate(-90)")
+                    .attr("x", -88)
+                    .attr("y", -30)
+                    .text("Average Highway Miles per Gallon")
+                    
+                // adding legends
+                // Continent legend title
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('text')
+                    .attr('x',0)
+                    .attr('y',475)
+                    .text('Origin')
+                    .attr("font-weight",700)
+                    .style("font-size", "20px")
+                // red legend entry
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('circle')
+                    .attr('cx',0)
+                    .attr('cy',500)
+                    .attr('r',8)
+                    .style('fill','rgb(255,0,0)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!="Asia" && continent[i]!=null}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('text')
+                    .attr('x',20)
+                    .attr('y',500)
+                    .text('Asia')
+                    .attr("alignment-baseline","middle")
+                    .style('fill','rgb(255,0,0)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!="Asia" && continent[i]!=null}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
+                // green legend entry
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('circle')
+                    .attr('cx',0)
+                    .attr('cy',525)
+                    .attr('r',8)
+                    .style('fill','rgb(0,255,0)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!="Europe" && continent[i]!=null}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('text')
+                    .attr('x',20)
+                    .attr('y',525)
+                    .text('Europe')
+                    .attr("alignment-baseline","middle")
+                    .style('fill','rgb(0,255,0)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!="Europe" && continent[i]!=null}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
+                // blue legend entry
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('circle')
+                    .attr('cx',0)
+                    .attr('cy',550)
+                    .attr('r',8.1)
+                    .style('fill','rgb(0,0,255)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!="North America" && continent[i]!=null}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('text')
+                    .attr('x',20)
+                    .attr('y',550)
+                    .text('North America')
+                    .attr("alignment-baseline","middle")
+                    .style('fill','rgb(0,0,255)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!="North America" && continent[i]!=null}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
+                // Engine size legend title
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('text')
+                    .attr('x',200)
+                    .attr('y',475)
+                    .text('Engine Size')
+                    .attr("font-weight",700)
+                    .style("font-size", "20px")
+                // size 4 legend entry
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('circle')
+                    .attr('cx',200)
+                    .attr('cy',500)
+                    .attr('r',4)
+                    .style('fill','rgb(100,100,100)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return cyl[i]>4 && cyl[i]!=null}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")  
+                  .append('text')
+                    .attr('x',220)
+                    .attr('y',500)
+                    .text('4 or fewer cylinders')
+                    .attr("alignment-baseline","middle")
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return cyl[i]>4 && cyl[i]!=null}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
+                // size 8 legend entry
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('circle')
+                    .attr('cx',200)
+                    .attr('cy',525)
+                    .attr('r',8)
+                    .style('fill','rgb(100,100,100)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return cyl[i]!=6 && cyl[i]!=null}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('text')
+                    .attr('x',220)
+                    .attr('y',525)
+                    .text('6 cylinders')
+                    .attr("alignment-baseline","middle")
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return cyl[i]!=6 && cyl[i]!=null}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
+                // size 12 legend entry
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('circle')
+                    .attr('cx',200)
+                    .attr('cy',550)
+                    .attr('r',12)
+                    .style('fill','rgb(100,100,100)')
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return cyl[i]<8 && cyl[i]!=null}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('text')
+                    .attr('x',220)
+                    .attr('y',550)
+                    .text('8 or more cylinders')
+                    .attr("alignment-baseline","middle")
+                    .on("mouseover",function(){d3.select('svg').selectAll("circle").filter(function(d,i){return cyl[i]<8 && cyl[i]!=null}).style('opacity',0.15)})
+                    .on("mouseout",function(){d3.select('svg').selectAll("circle").style("opacity",1)})
+*/                
                 
                 
                // }
