@@ -34,7 +34,7 @@
         <header>
           <h1>Exploring the 2017 Car Market</h1>
 
-          <p>new tick marks</p>
+          <p>fixed tick marks</p>
           <p id="intro">Full Market Data paragraph</p>
 
           <button type = "button" onclick="showFullMarketData()">Explore the Full Market</button>
@@ -161,12 +161,12 @@
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
-                  .call(d3.axisLeft(y).tickValues(xtick).tickFormat(d3.format("~s")))
+                  .call(d3.axisLeft(y).tickValues(ytick).tickFormat(d3.format("~s")))
                   
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,450)")
-                  .call(d3.axisBottom(x).tickValues(ytick).tickFormat(d3.format("~s")))
+                  .call(d3.axisBottom(x).tickValues(xtick).tickFormat(d3.format("~s")))
 
                 // axis titles
                 // Add X axis label:
