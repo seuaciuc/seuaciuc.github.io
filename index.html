@@ -10,10 +10,12 @@
       #tooltip {
         opacity:0;
         position:absolute;
-        text-align: center;
-        width: 60px; height: 40px;
+        text-align:left;
+        width: 160px; height: 80px;
         background: white;
         border: 0px;
+        left: 200px;
+        top: 200px;
       }
     </style>
     
@@ -22,7 +24,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>trying tooltip again... with 1 addition(s)...</p>
+        <p>trying tooltip formatting</p>
         
         <div id="tooltip"></div>
         <svg width=500 height=650>
@@ -49,7 +51,7 @@
                 var ymax = 50
 
                 var tooltip = d3.select('#tooltip');
-                //document.getElementById("citympg").innerHTML = citympg;
+                document.getElementById("citympg").innerHTML = citympg;
 
                 x = d3.scaleLinear().domain([xmin,xmax]).range([0,H]);
                 y = d3.scaleLinear().domain([ymin,ymax]).range([W,0]);
@@ -64,13 +66,12 @@
                     .attr('cy',function(d,i){return y(hwympg[i]);})
                     .attr('r',function(d,i){if(cyl[i]<=4){return 4;}else if(cyl[i]==6){return 8;}else{return 12;};})//{return 2+cyl[i];})
                     .style('fill',function(d,i){if(continent[i]=="Asia"){return "rgb(255,0,0)";}else if(continent[i]=="Europe"){return "rgb(0,255,0)";}else{return "rgb(0,0,255)";}})
-                    .style('stroke','black')
+                    //.style('stroke','black')
                     .on("mouseover",function(d,i){tooltip.style("opacity",1)
-                                                         .style("left",(d3.event.pageX)+"px")
-                                                         .style("top",(d3.event.pageY)+"px")
                                                          .html("CityMPG is"+citympg[i]);
+                                                  d3.select(this).style('stroke','black');
                                                  })
-                    .on("mouseout",function(){tooltip.style("opacity",0)})
+                    .on("mouseout",function(){tooltip.style("opacity",0);d3.select(this).style('stroke','none');})
                 
                 d3.select('svg')
                   .append("g")
