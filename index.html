@@ -24,7 +24,7 @@
 
         <h1>The 2017 Car Market from a Fuel Economy Perspective</h1>
 
-        <p>updated order</p>
+        <p>added text</p>
         
         <div id="tooltip"></div>
         <svg width=500 height=650>
@@ -124,6 +124,17 @@
                     .style('stroke','rgb(0,0,0)')
                     .style('fill','none')
 */ 
+                
+                // explanatory note on graph
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append("text")
+                    .attr("text-anchor", "top")
+                    .attr("x", 250)
+                    .attr("y", 300)
+                    .text("Hover any point to see more information here.")
+                    .style('fill','rgb(150,150,150)');
 
                 // axis titles
                 // Add X axis label:
@@ -146,7 +157,7 @@
                     .attr("x", -88)
                     .attr("y", -30)
                     .text("Average Highway Miles per Gallon")
-
+                    
                 // adding legends
                 // Continent legend title
                 d3.select('svg')
