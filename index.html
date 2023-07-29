@@ -34,7 +34,7 @@
 
         <h1>The 2017 Car Market from a Fuel Economy Perspective</h1>
 
-        <p>nwith new div</p>
+        <p>nwith new div with opacity control</p>
         
         <div id="tooltip"></div>
         <div id="note"></div>
@@ -63,7 +63,7 @@
 
                 var tooltip = d3.select('#tooltip');
                 var note = d3.select('#note')
-                             .html("Hover any point to see<br>more information here.")
+                             .html(<p style="color:gray;">Hover any point to see<br>more information here."</p>)
 
                 x = d3.scaleLinear().domain([xmin,xmax]).range([0,H]);
                 y = d3.scaleLinear().domain([ymin,ymax]).range([W,0]);
@@ -82,8 +82,9 @@
                     .on("mouseover",function(d,i){tooltip.style("opacity",1)
                                                          .html("<b>Make:</b> "+make[i]+"<br><b>Fuel:</b> "+fuel[i]+"<br><b>Cylinders:</b> "+cyl[i]+"<br><b>City MPG:</b> "+citympg[i]+"<br><b>Highway MPG:</b> "+hwympg[i]);
                                                   d3.select(this).style('stroke','black');
+                                                  note.style("opacity",0)
                                                  })
-                    .on("mouseout",function(){tooltip.style("opacity",0);d3.select(this).style('stroke','none');})
+                    .on("mouseout",function(){tooltip.style("opacity",0);d3.select(this).style('stroke','none');note.style("opacity",1);})
                 
                 d3.select('svg')
                   .append("g")
