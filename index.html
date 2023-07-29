@@ -62,6 +62,7 @@
                     .attr('cy',function(d,i){return y(hwympg[i]);})
                     .attr('r',function(d,i){if(cyl[i]<=4){return 4;}else if(cyl[i]==6){return 8;}else{return 12;};})//{return 2+cyl[i];})
                     .style('fill',function(d,i){if(continent[i]=="Asia"){return "rgb(255,0,0)";}else if(continent[i]=="Europe"){return "rgb(0,255,0)";}else{return "rgb(0,0,255)";}})
+                    .style('stroke','black')
                     .on("mouseover",function(d,i){tooltip.style("opacity",1)
                                                          .style("left",(d3.event.pageX)+"px")
                                                          .style("top",(d3.event.pageY)+"px")
