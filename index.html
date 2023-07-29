@@ -31,7 +31,7 @@
                 var yo = 50
                 var H = 400
                 var W = 400
-                var xmin = 10
+                var xmin = 5
                 var xmax = 50
                 var ymin = 10
                 var ymax = 50
@@ -72,16 +72,6 @@
                     .attr('y1',0)
                     .style('stroke','rgb(0,0,0)')
                                                         
-                d3.select('svg')
-                  .append("g")
-                  .attr("transform","translate(50,50)")
-                  .append('line')
-                    .attr('x0',W)
-                    .attr('y0',H)
-                    .attr('x1',W)
-                    .attr('y1',0)
-                    .style('stroke','rgb(0,0,0)')
-                
                 // axis titles
                 // Add X axis label:
                 d3.select('svg')
@@ -96,11 +86,11 @@
                 // Y axis label:
                 d3.select('svg')
                   .append("g")
-                  .attr("transform","translate(50,50)")
+                  .attr("transform","translate(0,50)")
                   .append("text")
                     .attr("text-anchor", "middle")
                     .attr("transform", "rotate(-90)")
-                    .attr("x", -25)
+                    .attr("x", 25)
                     .attr("y", 200)
                     .text("Average Highway Miles per Gallon")
 
@@ -230,6 +220,16 @@
                     .attr('y',550)
                     .text('10 or more cylinders')
                     .attr("alignment-baseline","middle")
+                
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('line')
+                    .attr('x0',W)
+                    .attr('y0',H)
+                    .attr('x1',W)
+                    .attr('y1',0)
+                    .style('stroke','rgb(0,0,0)')
                 
                // }
             </script>
