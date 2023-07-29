@@ -62,6 +62,17 @@
                   .call(d3.axisBottom(x).tickValues([10,20,30,40,50]).tickFormat(d3.format("~s")))
 
                 // box around chart
+
+                d3.select('svg')
+                  .append("g")
+                  .attr("transform","translate(50,50)")
+                  .append('line')
+                    .attr('x0',W)
+                    .attr('y0',0)
+                    .attr('x1',W)
+                    .attr('y1',H)
+                    .style('stroke','rgb(0,0,0)')
+
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,50)")
@@ -221,15 +232,7 @@
                     .text('10 or more cylinders')
                     .attr("alignment-baseline","middle")
                 
-                d3.select('svg')
-                  .append("g")
-                  .attr("transform","translate(50,50)")
-                  .append('line')
-                    .attr('x0',W)
-                    .attr('y0',H)
-                    .attr('x1',W)
-                    .attr('y1',0)
-                    .style('stroke','rgb(0,0,0)')
+                
                 
                // }
             </script>
