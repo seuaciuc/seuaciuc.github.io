@@ -11,7 +11,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>added titles x=50 y=0</p>
+        <p>added titles x=200 y=25</p>
         
         <svg width=500 height=650>
         </svg>
@@ -86,12 +86,12 @@
                 // Y axis label:
                 d3.select('svg')
                   .append("g")
-                  .attr("transform","translate(0,50)")
+                  .attr("transform","translate(50,50)")
                   .append("text")
                     .attr("text-anchor", "middle")
                     .attr("transform", "rotate(-90)")
-                    .attr("x", 50)
-                    .attr("y", 0)
+                    .attr("x", 200)
+                    .attr("y", 25)
                     .text("Average Highway Miles per Gallon")
 
                 // adding legends
