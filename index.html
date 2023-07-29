@@ -11,7 +11,7 @@
 
         <h1>The Car Market in 2017 from a Fuel Economy Perspective</h1>
 
-        <p>added chart box...</p>
+        <p>added chart box</p>
         
         <svg width=500 height=600>
         </svg>
@@ -66,19 +66,19 @@
                   .append("g")
                   .attr("transform","translate(50,450)")
                   .append('line')
-                    .attr('x0',xmin)
-                    .attr('x1',xmax)
-                    .attr('y0',ymax)
-                    .attr('y1',ymax)
+                    .attr('x0',x(xmin))
+                    .attr('x1',x(xmax))
+                    .attr('y0',y(ymax))
+                    .attr('y1',y(ymax))
                 
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,450)")
                   .append('line')
-                    .attr('x0',xmax)
-                    .attr('x1',xmax)
-                    .attr('y0',ymin)
-                    .attr('y1',ymax)
+                    .attr('x0',x(xmax))
+                    .attr('x1',x(xmax))
+                    .attr('y0',y(ymin))
+                    .attr('y1',y(ymax))
 
 
                 // adding legends
