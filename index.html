@@ -66,18 +66,18 @@
                   .append("g")
                   .attr("transform","translate(50,450)")
                   .append('line')
-                    .attr('x1',xmin)
-                    .attr('x2',xmax)
-                    .attr('y1',ymax)
+                    .attr('x0',xmin)
+                    .attr('x1',xmax)
+                    .attr('y0',ymax)
                     .attr('y1',ymax)
                 
                 d3.select('svg')
                   .append("g")
                   .attr("transform","translate(50,450)")
                   .append('line')
+                    .attr('x0',xmax)
                     .attr('x1',xmax)
-                    .attr('x2',xmax)
-                    .attr('y1',ymin)
+                    .attr('y0',ymin)
                     .attr('y1',ymax)
 
 
