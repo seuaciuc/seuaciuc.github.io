@@ -15,7 +15,7 @@
         background: white;
         border: 0px;
         left: 280px;
-        top: 600px;
+        top: 700px;
       }
       #note {
         opacity:1;
@@ -26,7 +26,7 @@
         color: gray;
         border: 0px;
         left: 280px;
-        top: 600px;
+        top: 700px;
       }
       .button {
         width: 500px;
@@ -40,7 +40,7 @@
 
           <button class="button" id="FMbutton" type="button" onclick="showFullMarketData()"><em>You are exploring the full market</em></button><br>
           <button class="button" id="FEbutton" type="button" onclick="showFuelEfficiencyMarketData()">Explore the fuel efficiency market</button><br>
-          <button class="button" id="HPbutton" type="button" onclick="showHighPowerMarketData()">Explore the high power market</button><br>
+          <button class="button" id="HPbutton" type="button" onclick="showHighPowerMarketData()">Explore the higher power market</button><br>
           <button class="button" id="Cbutton" type="button" onclick="showCompromiseData()">Explore a compromise</button><br>
 
           <p id="intro">
@@ -64,7 +64,6 @@
         <script>
 
           function showFullMarketData(){
-            //d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
             d3.select('svg').selectAll("*").remove()
             loadFullData()
             plotData(5,50,10,50,[10,20,30,40,50],[10,20,30,40,50])
@@ -81,19 +80,28 @@
             "market that is most interesting to you.";
             document.getElementById("FMbutton").innerHTML = "<em>You are exploring the full market</em>";
             document.getElementById("FEbutton").innerHTML = "Explore the fuel efficiency market";
-            document.getElementById("HPbutton").innerHTML = "Explore the high power market";
+            document.getElementById("HPbutton").innerHTML = "Explore the higher power market";
             document.getElementById("Cbutton").innerHTML = "Explore a compromise";
           }
 
           function showFuelEfficiencyMarketData(){
-            //d3.select('svg').selectAll("circle").filter(function(d,i){return continent[i]!=null}).remove()
             d3.select('svg').selectAll("*").remove()
             loadFuelEfficiencyData()
             plotData(20,40,25,45,[20,25,30,35,40],[25,30,35,40,45])
-            document.getElementById("intro").innerHTML = "Fuel Efficiency Data paragraph";
+            document.getElementById("intro").innerHTML = 
+            "<b>A look at the fuel efficiency market</b><br>"+
+            "The data below shows only the most fuel efficient cars in the 2017 market. These have a combined<br>"+
+            "(city and highway) average fuel efficiency of at least 28 miles per gallon (MPG). All options have,<br>"+
+            "4 cylinders or fewer, confirming that only smaller engines can provide this level of fuel efficiency.<br>"+
+            "The available options shown that Asian manufacturers have found a niche in the market of fuel efficient<br>"+
+            "cars, offering the largest number of options for the consumers (13), most of which have 4-cylinder engines.<br>"+
+            "In contrast, if you are interested in a fuel efficient North American car, you have only 2 options, and<br>"+
+            "only one has at least 4 cylinders. The European manufactures offer 5 options, most with engines with fewer<br>"+
+            "than 4 cylinders.<br>"+
+            "Explore the data below to get more specifics on the available choices.";
             document.getElementById("FMbutton").innerHTML = "Explore the full market";
             document.getElementById("FEbutton").innerHTML = "<em>You are exploring the fuel efficiency market</em>";
-            document.getElementById("HPbutton").innerHTML = "Explore the high power market";
+            document.getElementById("HPbutton").innerHTML = "Explore the higher power market";
             document.getElementById("Cbutton").innerHTML = "Explore a compromise";
           }
           
@@ -102,10 +110,20 @@
             d3.select('svg').selectAll("*").remove()
             loadHighPowerData()
             plotData(8,25,15,30,[10,15,20,25],[15,20,25,30])
-            document.getElementById("intro").innerHTML = "High Power Market Data paragraph";
+            document.getElementById("intro").innerHTML = 
+            "<b>A look at the higher power market</b><br>"+
+            "<br>"+
+            "<br>"+
+            "<br>"+
+            "<br>"+
+            "<br>"+
+            "<br>"+
+            "<br>"+
+            "<br>"+
+            "Explore the data below to get more specifics on the available choices.";
             document.getElementById("FMbutton").innerHTML = "Explore the full market";
             document.getElementById("FEbutton").innerHTML = "Explore the fuel efficiency market";
-            document.getElementById("HPbutton").innerHTML = "<em>You are exploring the high power market</em>";
+            document.getElementById("HPbutton").innerHTML = "<em>You are exploring the higher power market</em>";
             document.getElementById("Cbutton").innerHTML = "Explore a compromise";
           }
 
@@ -115,10 +133,20 @@
             loadCompromiseData()
             //plotData(15,30,20,35,[15,20,25,30],[20,25,30,35])
             plotData(19,24,26,30,[19,20,21,22,23,24],[26,27,28,29,30])
-            document.getElementById("intro").innerHTML = "Compromise Data paragraph";
+            document.getElementById("intro").innerHTML =
+            "<b>Looking for a compromise</b><br>"+
+            "<br>"+
+            "<br>"+
+            "<br>"+
+            "<br>"+
+            "<br>"+
+            "<br>"+
+            "<br>"+
+            "<br>"+
+            "Explore the data below to get more specifics on the available choices.";
             document.getElementById("FMbutton").innerHTML = "Explore the full market";
             document.getElementById("FEbutton").innerHTML = "Explore the fuel efficiency market";
-            document.getElementById("HPbutton").innerHTML = "Explore the high power market";
+            document.getElementById("HPbutton").innerHTML = "Explore the higher power market";
             document.getElementById("Cbutton").innerHTML = "<em>You are exploring a compromise</em>";
           }
 
