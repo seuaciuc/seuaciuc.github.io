@@ -36,15 +36,23 @@
         
  <body>
         <header>
-          <h1>Exploring the 2017 Car Market</h1>
+          <h1>Exploring the 2017 Automobile Market</h1>
 
           <button class="button" id="FMbutton" type="button" onclick="showFullMarketData()"><em>You are exploring the full market</em></button><br>
           <button class="button" id="FEbutton" type="button" onclick="showFuelEfficiencyMarketData()">Explore the fuel efficiency market</button><br>
           <button class="button" id="HPbutton" type="button" onclick="showHighPowerMarketData()">Explore the high power market</button><br>
           <button class="button" id="Cbutton" type="button" onclick="showCompromiseData()">Explore a compromise</button><br>
 
-          <p id="intro"><b>The full market</b><br>
-            The car market offers a wide variety of choices. Some buyers are interested in fuel efficiency, while others prefer to have power under the hood; some may show preferences for cars from a given origin.
+          <p id="intro">
+            <b>A look at the full market</b><br>
+            The car market offers a wide variety of choices. Some buyers are interested in fuel efficiency,<br>
+            while others prefer to have power under the hood; some may show preferences for cars from a given origin.<br>
+            Here you are provided with the chance to explore the options in the 2017 automobile market based<br>
+            on the choices that matter most to you.<br>
+            By exploring the data below, you can see that, as expected, more power (bigger engines) comes at<br>
+            the expense of lower fuel economy (hover over the <b>Engine Size</b> categories to see how it affects<br>
+            fuel efficienty). Which is more important to you? Choose the different options above to explore<br>
+            the portion of the market that is most interesting to you.
           </p>
 
         </header>
@@ -59,7 +67,16 @@
             d3.select('svg').selectAll("*").remove()
             loadFullData()
             plotData(5,50,10,50,[10,20,30,40,50],[10,20,30,40,50])
-            document.getElementById("intro").innerHTML = "Full Market Data paragraph";
+            document.getElementById("intro").innerHTML = 
+            "<b>A look at the full market</b><br>"+
+            "The car market offers a wide variety of choices. Some buyers are interested in fuel efficiency,<br>"+
+            "while others prefer to have power under the hood; some may show preferences for cars from a given origin.<br>"+
+            "Here you are provided with the chance to explore the options in the 2017 automobile market based<br>"+
+            "on the choices that matter most to you.<br>"+
+            "By exploring the data below, you can see that, as expected, more power (bigger engines) comes at<br>"+
+            "the expense of lower fuel economy (hover over the <b>Engine Size</b> categories to see how it affects<br>"+
+            "fuel efficienty). Which is more important to you? Choose the different options above to explore<br>"+
+            "the portion of the market that is most interesting to you.";
             document.getElementById("FMbutton").innerHTML = "<em>You are exploring the full market</em>";
             document.getElementById("FEbutton").innerHTML = "Explore the fuel efficiency market";
             document.getElementById("HPbutton").innerHTML = "Explore the high power market";
@@ -375,7 +392,7 @@
             var fuel = [];
 
             var tooltip = d3.select('#tooltip');
-            var note = d3.select('#note').html("Hover any point to see<br>more information about it.<br>Hover over any legend entry<br>to highlight its data points.")
+            var note = d3.select('#note').html("Hover any point to see<br>more information about it.<br>Hover over any legend category<br>to highlight its data points.")
 
 
                 loadFullData();
