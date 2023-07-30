@@ -137,10 +137,10 @@
             "<b>Looking for a compromise</b><br>"+
             "Seeking a compromise between power and fuel efficiency, the data below only shows cars that have<br>"+
             "at least 6 cylinders and show a combined (city and highway) average of at least 23 MPG.<br>"+
-            "<br>"+
-            "<br>"+
-            "<br>"+
-            "<br>"+
+            "There are only 5 options meeting this criteria, showing a compromise between the two competing<br>"+
+            "objectives of having high power engine and fuel efficiency is difficult to obtain. All options<br>"+
+            "are for 6-cylinder engines. The two European options show the best fuel efficiency of the group,<br>"+
+            "and both are for diesel vehicles.<br>"+
             "<br>"+
             "<br>"+
             "Explore the data below to get more specifics on the available choices.";
@@ -184,13 +184,13 @@
 
             function loadCompromiseData(){
               // defined as having at least 6 cylinders and an average MPG >= 23
-                citympg = [21,23,20,22,21,20,20];
-                hwympg = [28,29,29,28,28,28,28];
+                citympg = [20,20,20,21,21,22,23];
+                hwympg = [28,28,29,28,28,28,29];
                 cyl = [6,6,6,6,6,6,6];
-                continent = ["Asia","Europe","North America","Europe","Asia","Asia","Asia"];
-                make = ["Acura","BMW","Chrysler","Land Rover","Lexus","Lexus","Subaru"];
-                country = ["Japan","Germany","USA","England","Japan","Japan","Japan"];
-                fuel = ["Gasoline","Diesel","Gasoline","Diesel","Gasoline","Gasoline","Gasoline"];
+                continent = ["Asia","Asia","North America","Asia","Asia","Europe","Europe"];
+                make = ["Lexus","Subaru","Chrysler","Acura","Lexus","Land Rover","BMW"];
+                country = ["Japan","Japan","USA","Japan","Japan","England","Germany"];
+                fuel = ["Gasoline","Gasoline","Gasoline","Gasoline","Gasoline","Diesel","Diesel"];
             }
 
             function plotData(xmin,xmax,ymin,ymax,xtick,ytick){
