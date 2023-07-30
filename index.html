@@ -38,9 +38,9 @@
         <header>
           <h1>Exploring the 2017 Car Market</h1>
 
-          <p>updated size</p>
+          <p>italics</p>
           
-          <button class="button" id="FMbutton" type="button" onclick="showFullMarketData()">You are exploring the full market</button><br>
+          <button class="button" id="FMbutton" type="button" onclick="showFullMarketData()"><em>You are exploring the full market</em></button><br>
           <button class="button" id="FEbutton" type="button" onclick="showFuelEfficiencyMarketData()">Explore the fuel efficiency market</button><br>
           <button class="button" id="HPbutton" type="button" onclick="showHighPowerMarketData()">Explore the high power market</button><br>
           <button class="button" id="Cbutton" type="button" onclick="showCompromiseData()">Explore a compromise</button><br>
@@ -60,7 +60,7 @@
             loadFullData()
             plotData(5,50,10,50,[10,20,30,40,50],[10,20,30,40,50])
             document.getElementById("intro").innerHTML = "Full Market Data paragraph";
-            document.getElementById("FMbutton").innerHTML = "You are exploring the full market";
+            document.getElementById("FMbutton").innerHTML = "<em>You are exploring the full market</em>";
             document.getElementById("FEbutton").innerHTML = "Explore the fuel efficiency market";
             document.getElementById("HPbutton").innerHTML = "Explore the high power market";
             document.getElementById("Cbutton").innerHTML = "Explore a compromise";
@@ -73,7 +73,7 @@
             plotData(20,40,25,45,[20,25,30,35,40],[25,30,35,40,45])
             document.getElementById("intro").innerHTML = "Fuel Efficiency Data paragraph";
             document.getElementById("FMbutton").innerHTML = "Explore the full market";
-            document.getElementById("FEbutton").innerHTML = "You are exploring the fuel efficiency market";
+            document.getElementById("FEbutton").innerHTML = "<em>You are exploring the fuel efficiency market</em>";
             document.getElementById("HPbutton").innerHTML = "Explore the high power market";
             document.getElementById("Cbutton").innerHTML = "Explore a compromise";
           }
@@ -86,7 +86,7 @@
             document.getElementById("intro").innerHTML = "High Power Market Data paragraph";
             document.getElementById("FMbutton").innerHTML = "Explore the full market";
             document.getElementById("FEbutton").innerHTML = "Explore the fuel efficiency market";
-            document.getElementById("HPbutton").innerHTML = "You are exploring the high power market";
+            document.getElementById("HPbutton").innerHTML = "<em>You are exploring the high power market</em>";
             document.getElementById("Cbutton").innerHTML = "Explore a compromise";
           }
 
@@ -100,7 +100,7 @@
             document.getElementById("FMbutton").innerHTML = "Explore the full market";
             document.getElementById("FEbutton").innerHTML = "Explore the fuel efficiency market";
             document.getElementById("HPbutton").innerHTML = "Explore the high power market";
-            document.getElementById("Cbutton").innerHTML = "You are exploring a compromise";
+            document.getElementById("Cbutton").innerHTML = "<em>You are exploring a compromise</em>";
           }
 
             function loadFullData(){
